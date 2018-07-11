@@ -157,7 +157,7 @@ public final class FastBirthdayIterator extends ByExpander
             int padding = numDayOfYear;
             while (lunar[0] != lunar1[0] || lunar[1] != lunar1[1]) {
 
-                if (lunar1[1] <= lunar[1]) {
+                if ((lunar1[1] <= lunar[1]) || (lunar1[1] > lunar[1] && lunar1[2] == lunar[2])) {
                     padding++;
                 } else {
                     padding += ChineseCalendarMetrics.getNumDayOfYear(lunar1[2] + 1) - 1;

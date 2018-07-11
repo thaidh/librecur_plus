@@ -298,7 +298,10 @@ public class ChineseCalendarMetrics  extends CalendarMetrics{
 //        Date date = new Date(timestamp);
 //        cal.setTime(date);
 
-        cal.setTimeZone(timeZone);
+        if (timeZone != null) {
+            cal.setTimeZone(timeZone);
+        }
+
         cal.setTimeInMillis(timestamp);
 
         int year1 = cal.get(Calendar.YEAR);
